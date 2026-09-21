@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1f3a5f">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="NAGANO SAKE 酒蔵スタンプラリーマップ（非公式・見本）">
+<meta property="og:description" content="NAGANO SAKE カントリーツーリズム スタンプラリーの参加71蔵を、スマホの地図と一覧から。現在地から近い順、エリア別、営業中の目安、試飲の可否。組合の公開資料をもとに個人が作った、主催者さま向けの非公式の見本です。">
+<meta property="og:url" content="https://yt95350.github.io/nagano-sake-map/lite.html">
+<meta property="og:image" content="https://yt95350.github.io/nagano-sake-map/og.png">
+<meta property="og:image:width" content="2400">
+<meta property="og:image:height" content="1260">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="description" content="NAGANO SAKE カントリーツーリズム スタンプラリーの参加71蔵を、スマホの地図と一覧から。現在地から近い順、エリア別、営業中の目安、試飲の可否。組合の公開資料をもとに個人が作った、主催者さま向けの非公式の見本です。">
+<title>NAGANO SAKE 酒蔵スタンプラリーマップ（非公式・見本）</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.min.css">
+<style>
+:root{
+  --bg:#fbf7f0; --card:#fff; --ink:#2b241d; --muted:#7a6f63; --line:#e9e1d5;
+  --brand:#b4531d; --brand-2:#e08a3c; --accent:#f5c451; --ok:#2e8b57;
+  --shadow:0 6px 24px rgba(60,40,10,.14);
+  --sheet-peek:112px;
+  --soft:#f3ede3; --tint:#fdf3e6; --thumb:#f0e8dc; --util:#6b5d4e; --util-on:#3d3128; --handle:#d8cfc2;
+  --cluster:rgba(180,83,29,.9); --ring:rgba(245,196,81,.75);
+}
+:root{--bg:#f8f5ec;--ink:#1d2430;--muted:#6b6f78;--line:#e6e0d0;--brand:#1f3a5f;--brand-2:#4a6d94;--accent:#d9a441;--soft:#efeadc;--tint:#f3eee0;--thumb:#e9e3d3;--util:#545c6b;--util-on:#232c3d;--handle:#d3ccba;--cluster:rgba(31,58,95,0.9);--ring:rgba(217,164,65,0.75)}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html,body{height:100%;margin:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:var(--bg);-webkit-text-size-adjust:100%;overscroll-behavior:none}
+button{font:inherit;color:inherit}
+a{color:var(--brand)}
+#app{display:flex;flex-direction:column;height:100dvh;height:100vh;overflow:hidden}
+.sample{flex:none;background:var(--accent);color:#1e1a12;font-size:12px;font-weight:700;text-align:center;padding:4px 10px;line-height:1.4}
+header{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--brand);color:#fff;flex:none}
+header .brand{font-weight:800;font-size:16px;letter-spacing:.02em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1}
+header .brand small{font-weight:600;font-size:11px;background:rgba(255,255,255,.22);border-radius:999px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+header .stat{background:#fff;color:var(--brand);border:none;border-radius:999px;padding:5px 10px;font-weight:700;font-size:13px;cursor:pointer;white-space:nowrap}
+header .icon{background:rgba(255,255,255,.18);border:none;border-radius:999px;width:34px;height:34px;font-size:17px;cursor:pointer;flex:none}
+.toolbar{display:flex;gap:8px;padding:8px 12px 4px;flex:none;background:var(--bg)}
+.toolbar input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:9px 12px;font-size:15px;background:#fff;outline:none}
+.toolbar input:focus{border-color:var(--brand-2)}
+.toolbar button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:0 12px;cursor:pointer;font-size:16px;flex:none}
+.toolbar button.on{background:#e6f0ff;border-color:#8ab4f8}
+.chips{display:flex;gap:6px;padding:6px 12px 8px;overflow-x:auto;flex:none;scrollbar-width:none;background:var(--bg)}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1.5px solid var(--c,#999);color:var(--c,#555);background:#fff;border-radius:999px;padding:4px 10px;font-size:12.5px;font-weight:700;cursor:pointer;user-select:none;white-space:nowrap;line-height:1.3}
+.chip.on{background:var(--c,#555);color:#fff}
+.chip.util{--c:var(--util)}
+.chip.util.on{--c:var(--util-on)}
+.chip .n{opacity:.75;font-weight:600;margin-left:3px}
+.main{position:relative;flex:1;min-height:0;display:flex}
+#map{flex:1;min-width:0;height:100%;background:#eee}
+.leaflet-container{font:inherit}
+.leaflet-control-attribution{font-size:10px}
+.pin{width:24px;height:24px;border-radius:50%;background:var(--c);border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:900;transition:transform .15s}
+.pin.pin-ic{width:28px;height:28px;font-size:15px;line-height:1}
+.pin.pin-v{background:#fff;color:var(--c);border-color:var(--c)}
+.pin.pin-sel{transform:scale(1.35);box-shadow:0 0 0 4px var(--ring),0 3px 8px rgba(0,0,0,.4);z-index:1000}
+.pin.pin-approx{border-style:dashed}
+.cl{width:34px;height:34px;border-radius:50%;background:var(--cluster);color:#fff;border:2.5px solid #fff;box-shadow:0 2px 6px rgba(0,0,0,.35);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.me{width:18px;height:18px;border-radius:50%;background:#1a73e8;border:3px solid #fff;box-shadow:0 0 0 6px rgba(26,115,232,.25)}
+/* panel */
+#panel{background:var(--card);display:flex;flex-direction:column;min-height:0}
+.handle{display:none}
+.panel-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 14px;border-bottom:1px solid var(--line);flex:none;font-size:13px;color:var(--muted)}
+.panel-head select{border:1px solid var(--line);border-radius:8px;padding:4px 6px;font-size:13px;background:#fff}
+#list{overflow-y:auto;flex:1;min-height:0;-webkit-overflow-scrolling:touch;padding-bottom:env(safe-area-inset-bottom)}
+.card{display:flex;gap:10px;padding:10px 14px;border-bottom:1px solid var(--line);cursor:pointer;align-items:center}
+.card:active{background:var(--tint)}
+.card .th{width:64px;height:64px;border-radius:10px;object-fit:cover;background:var(--thumb);flex:none}
+.card .th.ph{display:flex;align-items:center;justify-content:center;font-size:26px}
+.card .b{flex:1;min-width:0}
+.card .nm{font-weight:700;font-size:14.5px;line-height:1.3;display:flex;align-items:center;gap:6px}
+.card .nm .dot{width:10px;height:10px;border-radius:50%;background:var(--c);flex:none}
+.card .hr{display:flex;flex-wrap:wrap;gap:3px 8px;align-items:center;font-size:12px;margin-top:3px;line-height:1.5}
+.stx{font-weight:700;padding:0 7px;border-radius:999px;background:var(--soft);color:var(--muted);white-space:nowrap}
+.stx-open{background:#e3f4e8;color:#1e6b3a}.stx-later{background:#fff3d6;color:#8a5a00}.stx-unknown{background:transparent;color:var(--muted);padding:0}
+.th2{color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:100%}
+.pay{border:1px solid var(--line);border-radius:999px;padding:0 6px;font-size:11.5px;color:var(--ink);white-space:nowrap}
+.card .mn{font-size:12.5px;color:var(--ink);opacity:.85;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.card .st{font-size:11.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.card .dist{font-weight:700;color:var(--brand);margin-right:6px}
+.card .vbtn{flex:none;width:36px;height:36px;border-radius:50%;border:1.5px solid var(--line);background:#fff;font-size:16px;cursor:pointer;color:#bbb}
+.card .vbtn.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.empty{padding:30px 16px;text-align:center;color:var(--muted);font-size:14px}
+/* detail */
+#detail{overflow-y:auto;flex:1;min-height:0;-webkit-overflow-scrolling:touch;padding-bottom:calc(20px + env(safe-area-inset-bottom))}
+.dhead{position:sticky;top:0;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);display:flex;align-items:center;gap:6px;padding:8px 10px;border-bottom:1px solid var(--line);z-index:2}
+.dhead button{border:none;background:var(--soft);border-radius:999px;padding:7px 12px;cursor:pointer;font-size:13px;font-weight:700}
+.dhead .sp{flex:1}
+.hero{width:100%;max-height:220px;object-fit:cover;display:block;background:var(--thumb)}
+.dbody{padding:12px 14px}
+.dbody h1{font-size:19px;margin:0 0 2px;line-height:1.3}
+.kana{font-size:11.5px;color:var(--muted);margin-bottom:8px}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 10px}
+.badge{font-size:11.5px;font-weight:700;border-radius:999px;padding:3px 9px;background:var(--soft);color:var(--util)}
+.badge.cat{background:var(--c);color:#fff}
+.badge.approx{background:#fff3cd;color:#8a6d00}
+.dstatus{display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;font-size:13.5px;margin:2px 0 8px}
+.dstatus .stx{font-size:12.5px;padding:2px 9px}
+.notice{background:#fff8e1;border-left:4px solid var(--accent);padding:8px 10px;border-radius:6px;font-size:13px;white-space:pre-line;margin:8px 0 12px}
+.notice b{display:block;font-size:12px;color:#8a6d00;margin-bottom:2px}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:10px 0 14px}
+.actions a,.actions button{display:flex;align-items:center;justify-content:center;gap:6px;border-radius:12px;padding:11px 8px;font-weight:700;font-size:14px;text-decoration:none;border:1.5px solid var(--line);background:#fff;color:var(--ink);cursor:pointer}
+.actions .primary{background:var(--brand);border-color:var(--brand);color:#fff}
+.actions .visit.on{background:var(--ok);border-color:var(--ok);color:#fff}
+.sec{margin:14px 0}
+.sec h2{font-size:13px;color:var(--brand);margin:0 0 6px;letter-spacing:.04em}
+.sec h3{font-size:15px;margin:10px 0 4px}
+.sec p{margin:0 0 6px;font-size:14px;line-height:1.65;white-space:pre-line}
+.menu{list-style:none;margin:0;padding:0}
+.menu li{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.menu li .pr{white-space:nowrap;font-weight:700;color:var(--brand)}
+.info{display:grid;grid-template-columns:auto 1fr;gap:6px 12px;font-size:13.5px}
+.info dt{color:var(--muted);white-space:nowrap}
+.info dd{margin:0;white-space:pre-line;word-break:break-word}
+.owner{display:flex;gap:10px;align-items:center;margin:8px 0}
+.owner img{width:56px;height:56px;border-radius:50%;object-fit:cover}
+.owner span{font-size:12.5px;color:var(--muted)}
+.links{display:flex;flex-wrap:wrap;gap:8px;font-size:13px}
+.links a{border:1px solid var(--line);border-radius:999px;padding:5px 10px;text-decoration:none;background:#fff}
+.foot{font-size:11px;color:var(--muted);margin-top:16px;line-height:1.6}
+dialog{border:none;border-radius:16px;max-width:520px;width:calc(100% - 32px);padding:0;box-shadow:var(--shadow)}
+dialog::backdrop{background:rgba(0,0,0,.4)}
+.about{padding:18px 20px;font-size:14px;line-height:1.7}
+.about h2{margin:0 0 8px;font-size:18px}
+.evbar{flex:none;display:flex;align-items:center;gap:8px;width:100%;border:none;border-bottom:1px solid var(--line);background:var(--tint);color:var(--ink);font:inherit;font-size:12.5px;font-weight:600;padding:6px 12px;text-align:left;cursor:pointer}
+.evbar span{flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.evbar b{flex:none;color:var(--brand);font-weight:800}
+.evinfo{background:var(--tint);border:1px solid var(--line);border-radius:12px;padding:10px 12px;margin:0 0 12px}
+.evinfo h3{margin:0 0 6px;font-size:15px}
+.evinfo dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 10px;font-size:13px;line-height:1.6}
+.evinfo dt{font-weight:700;white-space:nowrap;color:var(--muted)}
+.evinfo dd{margin:0}
+.evinfo p{margin:8px 0 0;font-size:12px;color:var(--muted)}
+.about ul{padding-left:18px;margin:6px 0}
+.about .close{margin-top:10px;width:100%;border:none;background:var(--brand);color:#fff;border-radius:10px;padding:10px;font-weight:700;cursor:pointer}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px;font-size:13px;z-index:9999;opacity:0;transition:opacity .2s;pointer-events:none}
+.toast.show{opacity:1}
+/* desktop */
+@media (min-width: 900px){
+  .main{flex-direction:row-reverse}
+  #panel{width:400px;flex:none;border-right:1px solid var(--line);box-shadow:var(--shadow);z-index:500}
+}
+/* mobile bottom sheet */
+@media (max-width: 899px){
+  #panel{position:absolute;left:0;right:0;bottom:0;height:88%;border-radius:18px 18px 0 0;box-shadow:0 -6px 24px rgba(0,0,0,.18);z-index:500;transition:transform .25s ease;will-change:transform;transform:translateY(calc(100% - var(--sheet-peek)))}
+  #panel.half{transform:translateY(50%)}
+  #panel.full{transform:translateY(0)}
+  #panel.drag{transition:none}
+  .handle{display:block;flex:none;padding:10px 0 4px;cursor:grab;touch-action:none}
+  .handle::before{content:"";display:block;width:40px;height:5px;border-radius:3px;background:var(--handle);margin:0 auto}
+}
+</style>
+</head>
+<body>
+<div id="app">
+<div class="sample">主催者さま向けの見本です（一般公開していません）<br>スタンプシート第15版・蔵元情報（令和7年4月）で作成</div>
+  <header>
+    <div class="brand">🍶 長野の酒蔵マップ<small id="verBadge">非公式</small></div>
+    <button class="stat" id="visitedStat" title="訪問済みだけ表示">訪問 0</button>
+    <button class="icon" id="aboutBtn" title="このアプリについて">ⓘ</button>
+  </header>
+<button class="evbar" id="evbar"><span>通年｜各蔵で1,000円以上の購入でスタンプ1個</span><b>概要 ›</b></button>
+  <div class="toolbar">
+    <input id="q" type="search" placeholder="蔵の名前・市町村・住所で検索" autocomplete="off">
+    <button id="locBtn" title="現在地を表示・近い順に並べる">📍</button>
+  </div>
+  <div class="chips" id="chips"></div>
+  <div class="main">
+    <div id="map"></div>
+    <aside id="panel">
+      <div class="handle" id="handle"></div>
+      <div class="panel-head" id="panelHead">
+        <span id="count"></span>
+        <select id="sort">
+          <option value="open">営業中を先に</option>
+          <option value="cat">カテゴリ順</option>
+          <option value="name">名前順</option>
+          <option value="dist">近い順</option>
+        </select>
+      </div>
+      <div id="list"></div>
+      <div id="detail" hidden></div>
+    </aside>
+  </div>
+</div>
+<dialog id="about">
+  <div class="about">
+    <h2>🍶 NAGANO SAKE 酒蔵スタンプラリーマップ（非公式・見本）</h2>
+<div class="evinfo"><h3>スタンプラリーの概要</h3><dl><dt>どんな催し</dt><dd>長野県酒造組合の加盟蔵のうち71蔵（スタンプシート第15版）を訪ねて、スタンプを集める企画。公式ページに期間の定めはなく、通年で参加できる</dd><dt>参加方法</dt><dd>公式ページからスタンプシート（PDF）を印刷して、蔵へ持参する。20歳未満は参加できない</dd><dt>スタンプ</dt><dd>各蔵で1人につき税込1,000円以上の買い物をすると1個。1つの蔵で押せるのは1個まで</dd><dt>賞品</dt><dd>10個：純米吟醸720mlを1本／20個：3本／30個：6本／全蔵：大吟醸720mlを18本、または希望する種類（純米吟醸など）の地酒。銘柄は選べない</dd><dt>応募方法</dt><dd>シートに住所・氏名などを書き、封筒に入れて110円切手を貼り、長野県酒造組合「NAGANO SAKEカントリーツーリズム係」へ郵送する（宛先はシートに記載）。送ったシートは返却されないので、希望の個数までためてから送る</dd><dt>シートの版</dt><dd>スタンプシート第15版（2025年4月28日、参加71蔵）。蔵元情報は令和7年（2025年）4月現在</dd><dt>ご注意</dt><dd>休業日や、蔵への立ち入りが制限される時期がある。訪問前に各蔵へ確認を。運転する人と20歳未満の人は試飲できない</dd></dl><p>公式ページ・スタンプシート・蔵元情報（PDF）の内容を要約したものです。参加蔵の数は、スタンプシート第15版の71蔵に合わせています。最新の情報は公式ページをご確認ください。</p></div>
+    <p>このページは、長野県酒造組合の「NAGANO SAKE カントリーツーリズム スタンプラリー」の参加蔵を、地図と一覧から探せるページの、主催者さま向けの見本です。一般には公開していません。スタンプシート第15版（2025年4月28日）の71蔵について、組合が公開している「蔵元情報」（令和7年4月現在）の所在地・営業時間・定休日・試飲の可否をもとに、個人が作成しました。電話番号・写真・紹介文は載せていません。エリアの区分はスタンプシートの表記のままです。</p>
+    <ul>
+      <li><b>引用元：長野県酒造組合「蔵元情報」（令和7年4月現在）・スタンプシート第15版（PDF）（<span id="updatedJ"></span>現在）</b>。店舗情報は<a href="https://www.nagano-sake.or.jp/tourism/stamp/" target="_blank" rel="noopener">公式サイト</a>の掲載内容（<span id="updated"></span>時点）を非商用で引用しています。営業時間・定休日・試飲の可否は変更される場合があります。最新情報は公式サイトと各店舗の案内をご確認ください。</li>
+      <li>位置は、蔵元情報の所在地から国土地理院の住所検索で求めています。点線のピン（<b>位置は概算</b>）は番地までの精度で、数十〜数百mずれることがあります。経路案内は目安としてお使いください。</li><li><b>訪問前に、営業日と受け入れの可否を各蔵へご確認ください。飲酒運転は絶対にしないでください。</b>運転する方と20歳未満の方は試飲できません。</li>
+      <li>「営業中」「本日定休」などの表示は、組合の「蔵元情報」（令和7年4月現在）の営業時間・定休日を機械的に読み取った目安です。不定休、季節による休み、仕込みの時期の立ち入り制限などは反映しきれないため、原文を確かめたうえで、訪問前に各蔵へ必ずご確認ください。</li>
+      <li>「訪問済み」の記録はこの端末のブラウザ内にだけ保存されます（サーバーには送信されません）。公式のスタンプは、紙のスタンプシートに各蔵で押してもらってください。</li>
+      <li>地図: © <a href="https://www.openstreetmap.org/copyright" target="_blank" rel="noopener">OpenStreetMap</a> contributors ／ <a href="https://maps.gsi.go.jp/development/ichiran.html" target="_blank" rel="noopener">地理院タイル</a></li>
+    </ul>
+    <button class="close" id="aboutClose">閉じる</button>
+  </div>
+</dialog>
+<div class="toast" id="toast"></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/leaflet.markercluster.min.js"></script>
+<script>
+const DATA = {"updated":"2026-09-20","source":"https://www.nagano-sake.or.jp/tourism/stamp/","holidays":["2026-09-21","2026-09-22","2026-09-23","2026-10-12","2026-11-03","2026-11-23","2027-01-01","2027-01-11","2027-02-11","2027-02-23","2027-03-21","2027-03-22"],"cats":{"c1":{"name":"中野エリア","color":"#B5452F","icon":"🍶"},"c2":{"name":"長野エリア","color":"#1F4E8C","icon":"🍶"},"c3":{"name":"佐久エリア","color":"#2E7D4F","icon":"🍶"},"c4":{"name":"上田エリア","color":"#C8891A","icon":"🍶"},"c5":{"name":"諏訪エリア","color":"#6A4C93","icon":"🍶"},"c6":{"name":"伊那エリア","color":"#0F8B8D","icon":"🍶"},"c7":{"name":"飯田エリア","color":"#A23B72","icon":"🍶"},"c8":{"name":"木曽エリア","color":"#5B6B2F","icon":"🍶"},"c9":{"name":"松本エリア","color":"#33312E","icon":"🍶"},"c10":{"name":"北安曇エリア","color":"#4FA3D1","icon":"🍶"}},"site":{"title":"NAGANO SAKE 酒蔵スタンプラリーマップ（非公式・見本）","source_name":"長野県酒造組合「蔵元情報」（令和7年4月現在）・スタンプシート第15版（PDF）","center":[36.31,138.09],"zoom":8,"dates_month":null,"icon":"🍶"},"stores":[{"id":"k01","name":"㈱角口酒造店","kana":"","cat":1,"type":"飯山市","addr":"飯山市大字常郷1147番地","tel":"","hours":"9:00～18:00","closed":"不定休（ホームページで営業日をご確認ください）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.946625,"lng":138.401917,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1080]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"1"},{"id":"k02","name":"㈱田中屋酒造店","kana":"","cat":1,"type":"飯山市","addr":"飯山市大字飯山2227番地","tel":"","hours":"9:00～17:30","closed":"日・祝日","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.8537655,"lng":138.3638236,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1050]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"2"},{"id":"k03","name":"㈱井賀屋酒造場","kana":"","cat":1,"type":"中野市","addr":"中野市大字中野1597","tel":"","hours":"9:00～19:00","closed":"日曜（予約がある場合のみ日曜も営業）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.74752,"lng":138.373581,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1140]]}],"closed":[0],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"3"},{"id":"k04","name":"志賀泉酒造㈱","kana":"","cat":1,"type":"中野市","addr":"中野市東山3-1","tel":"","hours":"8:30～17:00","closed":"土・日（3月より11月迄）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.745098,"lng":138.378311,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1020]]}],"closed":[0,6],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"4"},{"id":"k05","name":"㈱丸世酒造店","kana":"","cat":1,"type":"中野市","addr":"中野市中央二丁目5番12号","tel":"","hours":"9:00～18:00","closed":"日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.745129,"lng":138.373627,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1080]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"5"},{"id":"k06","name":"㈱玉村本店","kana":"","cat":1,"type":"山ノ内町","addr":"下高井郡山ノ内町大字平穏1163","tel":"","hours":"8:30～17:30","closed":"日曜・元旦","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.732513,"lng":138.432114,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1050]]}],"closed":[0],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"6"},{"id":"k12","name":"㈱高橋助作酒造店","kana":"","cat":2,"type":"信濃町","addr":"上水内郡信濃町大字古間856番地1","tel":"","hours":"8:00～17:00","closed":"元旦","menu":["試飲：可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.797428,"lng":138.214539,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"12"},{"id":"k13","name":"高沢酒造㈱","kana":"","cat":2,"type":"小布施町","addr":"上高井郡小布施町大字飯田776","tel":"","hours":"8:30～18:30","closed":"元旦","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.691975,"lng":138.303558,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1110]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"13"},{"id":"k14","name":"㈱松葉屋本店","kana":"","cat":2,"type":"小布施町","addr":"上高井郡小布施町大字小布施778","tel":"","hours":"9:00～18:00","closed":"元旦のみ","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.696335,"lng":138.31691,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1080]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"14"},{"id":"k15","name":"㈱桝一市村酒造場","kana":"","cat":2,"type":"小布施町","addr":"上高井郡小布施町小布施807","tel":"","hours":"9:00～19:00","closed":"年中無休","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.69521,"lng":138.317017,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1140]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"15"},{"id":"k16","name":"㈱遠藤酒造場","kana":"","cat":2,"type":"須坂市","addr":"須坂市大字須坂29番地","tel":"","hours":"8:30～17:30","closed":"元旦","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.653618,"lng":138.314804,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1050]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"16"},{"id":"k17","name":"㈱今井酒造店","kana":"","cat":2,"type":"長野市","addr":"長野市大字小島62","tel":"","hours":"9:00～17:00","closed":"土・日・祝日","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.658699,"lng":138.250122,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"17"},{"id":"k18","name":"㈱よしのや","kana":"","cat":2,"type":"長野市","addr":"長野市西之門町941","tel":"","hours":"8:30～17:30","closed":"年中無休","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.657784,"lng":138.186111,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1050]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"18"},{"id":"k19","name":"㈱西飯田酒造店","kana":"","cat":2,"type":"長野市","addr":"長野市篠ノ井小松原1726番地","tel":"","hours":"8:00～17:00","closed":"土・日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.6202208,"lng":138.1323132,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"19"},{"id":"k20","name":"㈱東飯田酒造店","kana":"","cat":2,"type":"長野市","addr":"長野市篠ノ井小松原1724番地","tel":"","hours":"9:00～16:00","closed":"第2日曜・第4日曜（予約の場合は対応）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.6201164,"lng":138.1330441,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,960]]}],"closed":[],"nth":[[2,0],[4,0]],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"20"},{"id":"k21","name":"㈱酒千蔵野","kana":"","cat":2,"type":"長野市","addr":"長野市川中島町今井368-1","tel":"","hours":"9:00～17:00","closed":"日・祝日・第2土曜（予約の場合対応）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.597103,"lng":138.147552,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,"h"],"nth":[[2,6]],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"21"},{"id":"k22","name":"㈱尾澤酒造場","kana":"","cat":2,"type":"長野市","addr":"長野市信州新町新町168-1","tel":"","hours":"9:00～17:00（5月～9月）","closed":"土・日・祝日（基本。事前にお問合わせ下さい）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.569641,"lng":138.008408,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"22"},{"id":"k23","name":"長野銘醸㈱","kana":"","cat":2,"type":"千曲市","addr":"千曲市大字八幡275","tel":"","hours":"8:00～17:00","closed":"土・日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.516453,"lng":138.075439,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"23"},{"id":"k24","name":"天法酒造㈱","kana":"","cat":2,"type":"千曲市","addr":"千曲市大字千本柳659","tel":"","hours":"8:00～17:00（土曜日は直売のみ9:00～16:00）","closed":"土・日・祝日、年末年始・盆休み有り","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.506058,"lng":138.128784,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"24"},{"id":"k44","name":"大塚酒造㈱","kana":"","cat":3,"type":"小諸市","addr":"小諸市大手2-1-24","tel":"","hours":"8:30～17:00","closed":"日・祝日","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.327858,"lng":138.423203,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1020]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"44"},{"id":"k45","name":"千曲錦酒造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市長土呂1110","tel":"","hours":"平日 9:00～16:00／土日祝 10:00～16:00","closed":"基本：年末年始","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.286736,"lng":138.464096,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[1,2,3,4,5],"r":[[540,960]]},{"d":[0,6,"h"],"r":[[600,960]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"45"},{"id":"k46","name":"大澤酒造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市茂田井2206","tel":"","hours":"9:00～16:00","closed":"年中無休","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.273567,"lng":138.337616,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,960]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"46"},{"id":"k47","name":"武重本家酒造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市茂田井2179","tel":"","hours":"8:00～17:00","closed":"土・日・祝日、年末年始・8/14～8/17","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.274345,"lng":138.339325,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"47"},{"id":"k48","name":"戸塚酒造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市岩村田752番地","tel":"","hours":"9:00～17:00","closed":"土・日・祝日","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.272575,"lng":138.478928,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"48"},{"id":"k49","name":"㈱土屋酒造店","kana":"","cat":3,"type":"佐久市","addr":"佐久市中込1914-2","tel":"","hours":"9:00～17:30","closed":"日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.236301,"lng":138.474594,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1050]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"49"},{"id":"k50","name":"芙蓉酒造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市平賀5372-イ","tel":"","hours":"8:30～17:30","closed":"日・祝日（土曜：4月～10月）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.228195,"lng":138.491516,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1050]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"50"},{"id":"k51","name":"伴野酒造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市大字野沢123番地","tel":"","hours":"8:20～17:00","closed":"日・祝日（土曜：4月～10月）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.223293,"lng":138.470215,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[500,1020]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"51"},{"id":"k52","name":"木内醸造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市大沢985","tel":"","hours":"9:00～18:00","closed":"年中無休","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.20853,"lng":138.456726,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1080]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"52"},{"id":"k53","name":"橘倉酒造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市臼田653番地2","tel":"","hours":"平日 9:00～18:00／土日祝 9:00～17:00","closed":"ショップは12/31～1/3（会社は土・日・祝日休み）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.20219,"lng":138.471863,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[1,2,3,4,5],"r":[[540,1080]]},{"d":[0,6,"h"],"r":[[540,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"53"},{"id":"k54","name":"佐久の花酒造㈱","kana":"","cat":3,"type":"佐久市","addr":"佐久市下越620","tel":"","hours":"9:00～17:00","closed":"不定休","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.191738,"lng":138.48761,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"54"},{"id":"k55","name":"黒澤酒造㈱","kana":"","cat":3,"type":"佐久穂町","addr":"南佐久郡佐久穂町大字穂積1400番地","tel":"","hours":"10:00～17:00","closed":"年中無休","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.135975,"lng":138.478363,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[600,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"55"},{"id":"k25","name":"沓掛酒造㈱","kana":"","cat":4,"type":"上田市","addr":"上田市塩尻35","tel":"","hours":"9:00～16:00","closed":"土・日・祝日 直売店：月曜（予約の場合は対応）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.419201,"lng":138.206299,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,960]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"25"},{"id":"k26","name":"和田龍酒造㈱","kana":"","cat":4,"type":"上田市","addr":"上田市中央西1-14-14","tel":"","hours":"9:00～18:00","closed":"日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.407486,"lng":138.245468,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1080]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"26"},{"id":"k27","name":"岡崎酒造㈱","kana":"","cat":4,"type":"上田市","addr":"上田市中央4丁目7番33号","tel":"","hours":"9:00～16:00","closed":"年中無休","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.405472,"lng":138.253082,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,960]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"27"},{"id":"k28","name":"若林醸造㈱","kana":"","cat":4,"type":"上田市","addr":"上田市大字中野466","tel":"","hours":"9:00～16:00","closed":"土（第三除く）・日・祝日、年末年始・盆休み有り","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.359791,"lng":138.194366,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,960]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"28"},{"id":"k29","name":"信州銘醸㈱","kana":"","cat":4,"type":"上田市","addr":"上田市長瀬2999-1","tel":"","hours":"事前にお問い合わせ下さい","closed":"（記載なし）","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.359341,"lng":138.289505,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":false,"rules":[],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"29"},{"id":"k30","name":"山三酒造㈱","kana":"","cat":4,"type":"上田市","addr":"上田市御嶽堂687の1","tel":"","hours":"事前にお問い合わせ下さい","closed":"（記載なし）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.340221,"lng":138.266891,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":false,"rules":[],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"30"},{"id":"k56","name":"㈱豊島屋","kana":"","cat":5,"type":"岡谷市","addr":"岡谷市本町3-9-1","tel":"","hours":"8:30～17:30","closed":"日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.062256,"lng":138.045013,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1050]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"56"},{"id":"k57","name":"高天酒造㈱","kana":"","cat":5,"type":"岡谷市","addr":"岡谷市銀座2丁目2-17","tel":"","hours":"9:00～17:00","closed":"土・日・祝日","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.068092,"lng":138.054199,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"57"},{"id":"k58","name":"磐栄運送㈱ 諏訪御湖鶴酒造場","kana":"","cat":5,"type":"下諏訪町","addr":"諏訪郡下諏訪町3205-17","tel":"","hours":"事前にお問い合わせ下さい","closed":"（記載なし）","menu":["試飲：記載なし（事前にお問い合わせください）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.0755976,"lng":138.0865362,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":false,"rules":[],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"58"},{"id":"k59","name":"㈱舞姫","kana":"","cat":5,"type":"諏訪市","addr":"諏訪市諏訪2丁目9-25","tel":"","hours":"9:00～18:00","closed":"無休","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.042549,"lng":138.120224,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1080]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"59"},{"id":"k60","name":"麗人酒造㈱","kana":"","cat":5,"type":"諏訪市","addr":"諏訪市諏訪2丁目9-21","tel":"","hours":"9:00～17:00","closed":"年中無休（年末年始・お盆は除く）","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.042118,"lng":138.120636,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"60"},{"id":"k61","name":"伊東酒造㈱","kana":"","cat":5,"type":"諏訪市","addr":"諏訪市諏訪2丁目3番6号","tel":"","hours":"10:00～17:30","closed":"年末年始（12/31～1/3）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.041672,"lng":138.121048,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[600,1050]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"61"},{"id":"k62","name":"酒ぬのや本金酒造㈱","kana":"","cat":5,"type":"諏訪市","addr":"諏訪市諏訪2丁目8-21","tel":"","hours":"8:30～17:30","closed":"不定休（日・祝日はご連絡下さい）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.041759,"lng":138.121109,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1050]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"62"},{"id":"k63","name":"宮坂醸造㈱","kana":"","cat":5,"type":"諏訪市","addr":"諏訪市元町1-16","tel":"","hours":"10:00～17:00","closed":"水曜","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.039528,"lng":138.12291,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[600,1020]]}],"closed":[3],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"63"},{"id":"k64","name":"戸田酒造㈱","kana":"","cat":5,"type":"茅野市","addr":"茅野市ちの2998","tel":"","hours":"9:00～17:00","closed":"土・日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.992577,"lng":138.150757,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"64"},{"id":"k65","name":"㈱小野酒造店","kana":"","cat":6,"type":"辰野町","addr":"上伊那郡辰野町大字小野992-1","tel":"","hours":"8:00～17:00（時間外はお問合せ下さい）","closed":"土・日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.040279,"lng":137.961594,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"65"},{"id":"k66","name":"春日酒造㈱","kana":"","cat":6,"type":"伊那市","addr":"伊那市西町4875-1（ＪＲ伊那市駅となり）","tel":"","hours":"9:00～17:00","closed":"土・日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.83744,"lng":137.958054,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"66"},{"id":"k67","name":"(資)宮島酒店","kana":"","cat":6,"type":"伊那市","addr":"伊那市荒井3629番地1","tel":"","hours":"9:00～17:00","closed":"土・日・祝日（但し冬期は営業する場合あり）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.841232,"lng":137.957809,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"67"},{"id":"k68","name":"㈱仙醸","kana":"","cat":6,"type":"伊那市","addr":"伊那市高遠町上山田2432","tel":"","hours":"8:30～17:00","closed":"土・日・祝日","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.822746,"lng":138.032089,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"68"},{"id":"k69","name":"酒造㈱長生社","kana":"","cat":6,"type":"駒ヶ根市","addr":"駒ヶ根市赤須東10番31号","tel":"","hours":"事前にお問い合わせ下さい","closed":"（記載なし）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.732506,"lng":137.936096,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":false,"rules":[],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"69"},{"id":"k70","name":"米澤酒造㈱","kana":"","cat":6,"type":"中川村","addr":"上伊那郡中川村大草4182-1","tel":"","hours":"9:00～17:00","closed":"土・日・祝日","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.637611,"lng":137.947098,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"70"},{"id":"k71","name":"喜久水酒造㈱","kana":"","cat":7,"type":"飯田市","addr":"飯田市鼎切石4293番地","tel":"","hours":"10:00～16:00","closed":"無休（10月～4月）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.513046,"lng":137.807083,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[600,960]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"71"},{"id":"k31","name":"㈱湯川酒造店","kana":"","cat":8,"type":"木祖村","addr":"木曽郡木祖村大字藪原1003番地の1","tel":"","hours":"10:00～16:30（冬季）","closed":"月・日（祝日は不定休）","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.968666,"lng":137.791153,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[600,990]]}],"closed":[0,1],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"31"},{"id":"k32","name":"七笑酒造㈱","kana":"","cat":8,"type":"木曽町","addr":"木曽郡木曽町福島5135","tel":"","hours":"8:00～17:00","closed":"年中無休","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.849911,"lng":137.697495,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"32"},{"id":"k33","name":"㈱中善酒造店","kana":"","cat":8,"type":"木曽町","addr":"木曽郡木曽町福島5990","tel":"","hours":"7:00～19:00","closed":"不定休","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.824894,"lng":137.716949,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[420,1140]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"33"},{"id":"k34","name":"西尾酒造㈱","kana":"","cat":8,"type":"大桑村","addr":"木曽郡大桑村須原893","tel":"","hours":"10:00～12:00、13:00～16:00","closed":"不定休（12/31・1/1は休日）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":35.6955894,"lng":137.6917398,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[600,720],[780,960]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"34"},{"id":"k35","name":"ＥＨ酒造㈱","kana":"","cat":9,"type":"安曇野市","addr":"安曇野市豊科高家1090-1","tel":"","hours":"9:00～17:00","closed":"日・祝日、年末年始・盆休み有り","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.255348,"lng":137.923416,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"35"},{"id":"k36","name":"笹井酒造㈱","kana":"","cat":9,"type":"松本市","addr":"松本市大字島内3682番地","tel":"","hours":"8:30～18:00","closed":"日曜","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.248535,"lng":137.949051,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1080]]}],"closed":[0],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"36"},{"id":"k37","name":"善哉酒造㈱","kana":"","cat":9,"type":"松本市","addr":"松本市大手5-4-24","tel":"","hours":"9:00～17:00","closed":"不定休","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.235615,"lng":137.97641,"approx":false,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"37"},{"id":"k38","name":"大信州酒造㈱","kana":"","cat":9,"type":"松本市","addr":"松本市大字島立2380","tel":"","hours":"平日 10:00～18:00／土日祝 10:00～17:00","closed":"年末年始・盆休み有り","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.227772,"lng":137.928101,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[1,2,3,4,5],"r":[[600,1080]]},{"d":[0,6,"h"],"r":[[600,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"38"},{"id":"k39","name":"㈱亀田屋酒造店","kana":"","cat":9,"type":"松本市","addr":"松本市島立2748","tel":"","hours":"9:30～17:00","closed":"年末年始（12/31～1/3）、お盆（3日間）","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.224415,"lng":137.92514,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[570,1020]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"39"},{"id":"k40","name":"岩波酒造(資)","kana":"","cat":9,"type":"松本市","addr":"松本市里山辺5159","tel":"","hours":"8:30～17:00","closed":"土・日・祝日","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.224476,"lng":137.996262,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"40"},{"id":"k41","name":"(資)丸永酒造場","kana":"","cat":9,"type":"塩尻市","addr":"塩尻市大字広丘高出840","tel":"","hours":"8:30～17:00","closed":"土・日・祝日","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.121281,"lng":137.965164,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"41"},{"id":"k42","name":"和饗酒造㈱","kana":"","cat":9,"type":"塩尻市","addr":"塩尻市塩尻町140","tel":"","hours":"8:30～17:00","closed":"日・祝日（夏期：土・日・祝日）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.103573,"lng":137.974182,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[510,1020]]}],"closed":[0,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"42"},{"id":"k43","name":"美寿々酒造㈱","kana":"","cat":9,"type":"塩尻市","addr":"塩尻市大字洗馬2402番地","tel":"","hours":"8:00～18:00","closed":"不定休（日・祝日も営業することがあるのでお問合わせください）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.102024,"lng":137.899521,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1080]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"43"},{"id":"k07","name":"北安醸造㈱","kana":"","cat":10,"type":"大町市","addr":"大町市大町2340番地1","tel":"","hours":"8:00～17:00","closed":"土・日・祝日（基本。事前にお問合わせ下さい）","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.511349,"lng":137.85788,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"7"},{"id":"k08","name":"白馬錦酒造㈱","kana":"","cat":10,"type":"大町市","addr":"大町市大町2512-1","tel":"","hours":"8:00～17:00","closed":"土・日・祝日（基本。事前にお問合わせ下さい）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.507137,"lng":137.859268,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"8"},{"id":"k09","name":"㈱市野屋","kana":"","cat":10,"type":"大町市","addr":"大町市大町2527番地イ号","tel":"","hours":"8:00～17:00","closed":"土・日・祝日（基本。事前にお問合わせ下さい）","menu":["試飲：不可"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.506317,"lng":137.859741,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"9"},{"id":"k10","name":"福源酒造㈱","kana":"","cat":10,"type":"池田町","addr":"北安曇郡池田町池田2100","tel":"","hours":"8:00～17:00","closed":"土・日・祝日（基本。事前にお問合わせ下さい）","menu":["試飲：可（有料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.420792,"lng":137.880447,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[480,1020]]}],"closed":[0,6,"h"],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"10"},{"id":"k11","name":"大雪渓酒造㈱","kana":"","cat":10,"type":"池田町","addr":"北安曇郡池田町会染9642-2","tel":"","hours":"9:00～18:00（年末年始は短縮営業）","closed":"年中無休","menu":["試飲：可（無料）"],"takeout":"","seats":"","station":"","web":"","sns":{},"spice":"","price":"","halal":"","kids":"","allergy":"","lat":36.390614,"lng":137.888229,"approx":true,"thumb":null,"img":null,"face":null,"owner":"","desc":[],"notice":"","url":"https://www.nagano-sake.or.jp/tourism/stamp/","gmap":null,"page":null,"sched":{"ok":true,"rules":[{"d":[0,1,2,3,4,5,6,"h"],"r":[[540,1080]]}],"closed":[],"nth":[],"dates":[]},"pay":"","paySrc":"","reserve":"","quiet":"","num":"11"}],"media":false};
+</script>
+<script>
+(function(){
+  'use strict';
+  const CATS = DATA.cats, STORES = DATA.stores, MEDIA = !!DATA.media;
+  const LS = 'kcg2026.visited';
+  const $ = (s, el=document) => el.querySelector(s);
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const nfkc = s => String(s ?? '').normalize('NFKC').toLowerCase();
+  const jdate = iso => { const m = String(iso || '').match(/^(\d{4})-(\d{2})-(\d{2})$/); return m ? `${m[1]}年${+m[2]}月${+m[3]}日` : String(iso || ''); };
+  const catOf = s => CATS['c' + s.cat];
+
+  let visited = {};
+  try { visited = JSON.parse(localStorage.getItem(LS) || '{}') || {}; } catch(e) { visited = {}; }
+  const saveVisited = () => { try { localStorage.setItem(LS, JSON.stringify(visited)); } catch(e) {} };
+
+  const state = { cats: new Set(Object.keys(CATS).map(k => +k.slice(1))), q: '', visit: 'all', inView: false, sort: 'open', pos: null, sel: null, openOnly: false };
+  STORES.forEach(s => { s._search = nfkc([s.name, s.kana, s.menu.join(' '), s.addr, s.station, catOf(s).name, s.type, s.spice, s.pay || ''].join(' ')); s._dist = null; });
+
+  // ---------- map
+  const map = L.map('map', { zoomControl: false, tap: false }).setView([35.6965, 139.7625], 15);
+  L.control.zoom({ position: 'topright' }).addTo(map);
+  const osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 19, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>' });
+  const gsi = L.tileLayer('https://cyberjapandata.gsi.go.jp/xyz/pale/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '<a href="https://maps.gsi.go.jp/development/ichiran.html">地理院タイル</a>' });
+  osm.addTo(map);
+  L.control.layers({ 'OpenStreetMap': osm, '地理院 淡色地図': gsi }, null, { position: 'topright' }).addTo(map);
+  const cluster = L.markerClusterGroup({ maxClusterRadius: 34, disableClusteringAtZoom: 17, spiderfyOnMaxZoom: true, showCoverageOnHover: false,
+    iconCreateFunction: c => L.divIcon({ html: '<div class="cl">' + c.getChildCount() + '</div>', className: '', iconSize: [34, 34] }) });
+  map.addLayer(cluster);
+  const markers = {};
+  function icon(s) {
+    const v = !!visited[s.id], sel = state.sel === s.id;
+    const ic = catOf(s).icon || '', ps = ic ? 28 : 24;  // カテゴリに icon（絵文字）があれば、ピンの中に入れて少し大きくする
+    return L.divIcon({ className: '', iconSize: [ps, ps], iconAnchor: [ps / 2, ps / 2],
+      html: '<div class="pin' + (ic ? ' pin-ic' : '') + (v ? ' pin-v' : '') + (sel ? ' pin-sel' : '') + (s.approx ? ' pin-approx' : '') + '" style="--c:' + catOf(s).color + '">' + (v ? '✓' : ic) + '</div>' });
+  }
+  STORES.forEach(s => {
+    const m = L.marker([s.lat, s.lng], { icon: icon(s), title: s.name, zIndexOffset: 0 });
+    m.on('click', () => openDetail(s.id, false));
+    markers[s.id] = m;
+  });
+  let meMarker = null;
+
+  // ---------- 営業状況（公式サイトの営業時間・定休日を解析した目安）
+  const HOL = new Set(DATA.holidays || []);
+  const pad2 = n => (n < 10 ? '0' : '') + n;
+  const fmtT = m => { m = m % 1440; return pad2(Math.floor(m / 60)) + ':' + pad2(m % 60); };
+  function jst() { const d = new Date(); return new Date(d.getTime() + (d.getTimezoneOffset() + 540) * 60000); }
+  function dayKey(t) {
+    const ymd = t.getFullYear() + '-' + pad2(t.getMonth() + 1) + '-' + pad2(t.getDate());
+    return { dow: t.getDay(), hol: HOL.has(ymd), nth: Math.ceil(t.getDate() / 7), ymd, month: t.getMonth() + 1, day: t.getDate() };
+  }
+  function rangesFor(sc, dk) {
+    if (sc.closed.includes(dk.dow) || (dk.hol && sc.closed.includes('h'))) return 'closed';
+    if (sc.nth.some(x => x[0] === dk.nth && x[1] === dk.dow)) return 'closed';
+    if (sc.dates && sc.dates.length && DATA.site.dates_month && dk.month === DATA.site.dates_month && sc.dates.includes(dk.day)) return 'closed';
+    let rules = dk.hol ? sc.rules.filter(r => r.d.includes('h')) : [];
+    if (!rules.length) rules = sc.rules.filter(r => r.d.includes(dk.dow));
+    if (!rules.length && dk.hol) rules = sc.rules.filter(r => r.d.includes('h'));
+    const rs = [];
+    rules.forEach(r => r.r.forEach(x => rs.push(x)));
+    return rs.sort((a, b) => a[0] - b[0]);
+  }
+  function statusOf(s) {
+    const sc = s.sched;
+    if (!sc || !sc.ok) return { k: 'unknown', rank: 2, label: '', today: '' };
+    const t = jst(), dk = dayKey(t), now = t.getHours() * 60 + t.getMinutes();
+    let rs = rangesFor(sc, dk);
+    // 前日の深夜営業分（24:00 を超える範囲）
+    const y = new Date(t.getTime() - 86400000), ry = rangesFor(sc, dayKey(y));
+    const spill = Array.isArray(ry) ? ry.filter(r => r[1] > 1440).map(r => [0, r[1] - 1440]) : [];
+    if (rs === 'closed' && !spill.length) return { k: 'closed', rank: 4, label: '本日定休', today: '' };
+    if (rs === 'closed') rs = [];
+    const all = spill.concat(rs);
+    const today = rs.map(r => fmtT(r[0]) + '–' + fmtT(r[1])).join(' / ');
+    const cur = all.find(r => r[0] <= now && now < r[1]);
+    if (cur) return { k: 'open', rank: 0, label: '営業中 〜' + fmtT(cur[1]), today, until: cur[1] };
+    const next = all.find(r => r[0] > now);
+    if (next) return { k: 'later', rank: 1, label: fmtT(next[0]) + (all.some(r => r[1] <= now) ? ' 再開' : ' 開店'), today, at: next[0] };
+    if (all.length) return { k: 'done', rank: 3, label: '本日終了', today };
+    return { k: 'closed', rank: 4, label: '本日定休', today: '' };
+  }
+  let statusCache = {}, statusMinute = -1;
+  function st(s) {
+    const t = jst(), key = t.getDate() * 1440 + t.getHours() * 60 + t.getMinutes();
+    if (key !== statusMinute) { statusCache = {}; statusMinute = key; }
+    return statusCache[s.id] || (statusCache[s.id] = statusOf(s));
+  }
+  function stxHtml(x) { return x.label ? '<span class="stx stx-' + x.k + '">' + esc(x.label) + '</span>' : ''; }
+
+  // ---------- filtering
+  function passes(s, useBounds) {
+    if (!state.cats.has(s.cat)) return false;
+    if (state.visit === 'done' && !visited[s.id]) return false;
+    if (state.visit === 'todo' && visited[s.id]) return false;
+    if (state.q && !s._search.includes(state.q)) return false;
+    if (state.openOnly && st(s).k !== 'open') return false;
+    if (useBounds && state.inView && !map.getBounds().contains([s.lat, s.lng])) return false;
+    return true;
+  }
+  const collator = new Intl.Collator('ja');
+  function sorted(list) {
+    const by = state.sort;
+    return list.slice().sort((a, b) => {
+      if (by === 'open') { const ra = st(a).rank, rb = st(b).rank; if (ra !== rb) return ra - rb; if (a._dist != null && b._dist != null) return a._dist - b._dist; }
+      if (by === 'dist' && a._dist != null && b._dist != null) return a._dist - b._dist;
+      if (by === 'cat' && a.cat !== b.cat) return a.cat - b.cat;
+      return collator.compare(a.kana || a.name, b.kana || b.name);
+    });
+  }
+  function refreshMarkers() {
+    const keep = STORES.filter(s => passes(s, false));
+    cluster.clearLayers();
+    keep.forEach(s => { markers[s.id].setIcon(icon(s)); });
+    cluster.addLayers(keep.map(s => markers[s.id]));
+  }
+  function fmtDist(m) { return m < 1000 ? Math.round(m) + 'm' : (m / 1000).toFixed(1) + 'km'; }
+  function renderList() {
+    const list = sorted(STORES.filter(s => passes(s, true)));
+    $('#count').textContent = list.length + '件';
+    if (!list.length) { $('#list').innerHTML = '<div class="empty">該当する蔵がありません</div>'; return; }
+    $('#list').innerHTML = list.map(s => {
+      const c = catOf(s), v = !!visited[s.id];
+      const th = MEDIA && s.thumb ? '<img class="th" loading="lazy" src="' + esc(s.thumb) + '" alt="">' : '<div class="th ph">' + (catOf(s).icon || DATA.site.icon || '🍛') + '</div>';
+      const menu = s.menu.slice(0, 2).join(' ／ ');
+      const dist = s._dist != null ? '<span class="dist">' + fmtDist(s._dist) + '</span>' : '';
+      const stn = (s.station || '').split('\n')[0];
+      const x = st(s);
+      const hoursLine = x.today || (s.hours || '').split('\n')[0];
+      const pay = s.pay ? '<span class="pay">' + esc(s.pay.length > 14 ? s.pay.slice(0, 14) + '…' : s.pay) + '</span>' : '';
+      return '<div class="card" data-id="' + esc(s.id) + '">' + th +
+        '<div class="b"><div class="nm"><span class="dot" style="--c:' + c.color + '"></span><span>' + esc(s.name) + '</span></div>' +
+        '<div class="hr">' + stxHtml(x) + (hoursLine ? '<span class="th2">' + esc(hoursLine) + '</span>' : '') + pay + '</div>' +
+        '<div class="mn">' + esc(menu) + '</div>' +
+        '<div class="st">' + dist + esc(c.name) + (stn ? ' ・ ' + esc(stn) : '') + (s.approx ? ' ・ 位置は概算' : '') + '</div></div>' +
+        '<button class="vbtn' + (v ? ' on' : '') + '" data-v="' + esc(s.id) + '" title="訪問済みにする">✓</button></div>';
+    }).join('');
+  }
+  function renderStat() {
+    const n = STORES.filter(s => visited[s.id]).length;
+    $('#visitedStat').textContent = '訪問 ' + n + ' / ' + STORES.length;
+  }
+  function renderChips() {
+    const counts = {};
+    STORES.forEach(s => { counts[s.cat] = (counts[s.cat] || 0) + 1; });
+    let h = '';
+    h += '<button class="chip util' + (state.openOnly ? ' on' : '') + '" data-open="1">営業中</button>';
+    h += '<button class="chip util' + (state.visit === 'todo' ? ' on' : '') + '" data-visit="todo">未訪問</button>';
+    h += '<button class="chip util' + (state.inView ? ' on' : '') + '" data-inview="1">🗺 表示範囲のみ</button>';
+    Object.keys(CATS).forEach(k => {
+      const id = +k.slice(1), c = CATS[k];
+      h += '<button class="chip' + (state.cats.has(id) ? ' on' : '') + '" data-cat="' + id + '" style="--c:' + c.color + '">' + (c.icon ? c.icon + ' ' : '') + esc(c.name) + '<span class="n">' + (counts[id] || 0) + '</span></button>';
+    });
+    $('#chips').innerHTML = h;
+  }
+  function refreshAll() { refreshMarkers(); renderList(); renderStat(); $('#list').scrollTop = 0; }
+
+  // ---------- detail
+  function menuHtml(lines) {
+    return '<ul class="menu">' + lines.map(l => {
+      const m = l.match(/^(.*?)[\s　]*[¥￥]\s*([\d,]+)(.*)$/);
+      if (m) return '<li><span>' + esc(m[1]) + '</span><span class="pr">¥' + esc(m[2]) + esc(m[3]) + '</span></li>';
+      return '<li><span>' + esc(l) + '</span></li>';
+    }).join('') + '</ul>';
+  }
+  function openDetail(id, fromList) {
+    const s = STORES.find(x => x.id === id); if (!s) return;
+    const prev = state.sel; state.sel = id;
+    if (prev && markers[prev]) markers[prev].setIcon(icon(STORES.find(x => x.id === prev)));
+    markers[id].setIcon(icon(s));
+    const c = catOf(s), v = visited[s.id];
+    const dir = 'https://www.google.com/maps/dir/?api=1&destination=' + s.lat + ',' + s.lng + '&travelmode=walking';
+    const gm = s.gmap || ('https://www.google.com/maps/search/?api=1&query=' + s.lat + ',' + s.lng);
+    let h = '<div class="dhead"><button id="back">‹ 一覧へ</button><span class="sp"></span><button id="share">共有</button></div>';
+    if (MEDIA && s.img) h += '<img class="hero" src="' + esc(s.img) + '" alt="">';
+    h += '<div class="dbody"><h1>' + esc(s.name) + '</h1>' + (s.kana ? '<div class="kana">' + esc(s.kana) + '</div>' : '');
+    h += '<div class="badges"><span class="badge cat" style="--c:' + c.color + '">' + (c.icon ? c.icon + ' ' : '') + esc(c.name) + '</span>';
+    if (s.type) h += '<span class="badge">' + esc(s.type) + '</span>';
+    if (s.spice && s.spice.length <= 14) h += '<span class="badge">🌶 ' + esc(s.spice) + '</span>';
+    if (s.price) h += '<span class="badge">💴 ' + esc(s.price) + '</span>';
+    if (s.takeout && /あり|可/.test(s.takeout)) h += '<span class="badge">🥡 テイクアウト</span>';
+    if (s.page) h += '<span class="badge">📖 ガイドブック P' + s.page + '</span>';
+    if (s.approx) h += '<span class="badge approx">位置は概算</span>';
+    h += '</div>';
+    { const x = st(s); if (x.label || x.today) h += '<div class="dstatus">' + stxHtml(x) + (x.today ? '<span>本日 ' + esc(x.today) + '</span>' : '') + '<span style="color:var(--muted);font-size:12px">（公式の営業時間からの目安）</span></div>'; }
+    if (s.notice) h += '<div class="notice"><b>お店からのお知らせ（公式サイトより）</b>' + esc(s.notice) + '</div>';
+    h += '<div class="actions"><a class="primary" href="' + esc(dir) + '" target="_blank" rel="noopener">🚶 経路（Googleマップ）</a>' +
+      '<button class="visit' + (v ? ' on' : '') + '" id="visit">' + (v ? '✓ 訪問済み ' + v : '☐ 訪問済みにする') + '</button></div>';
+    if (s.menu.length) h += '<div class="sec"><h2>蔵の見学・試飲（組合の蔵元情報より）</h2>' + menuHtml(s.menu) + '</div>';
+    if (MEDIA && s.desc && s.desc.length) {
+      h += '<div class="sec"><h2>お店について</h2>';
+      if (s.face || s.owner) h += '<div class="owner">' + (s.face ? '<img src="' + esc(s.face) + '" alt="">' : '') + '<span>' + esc(s.owner) + '</span></div>';
+      s.desc.forEach(d => { h += (d.h ? '<h3>' + esc(d.h) + '</h3>' : '') + (d.p ? '<p>' + esc(d.p) + '</p>' : ''); });
+      h += '</div>';
+    }
+    h += '<div class="sec"><h2>蔵の情報</h2><dl class="info">';
+    const rows = [['営業時間', s.hours], ['定休日', s.closed], ['支払い', s.pay ? s.pay + (s.paySrc === '報告' ? '（訪問者の報告）' : '') : '未確認（公式サイトに記載なし）'], ['予約', s.reserve], ['空いている時間', s.quiet], ['最寄駅', s.station], ['住所', s.addr], ['電話', s.tel], ['辛さ', s.spice && s.spice.length > 14 ? s.spice : ''], ['席数', s.seats], ['テイクアウト', s.takeout], ['ハラール', s.halal], ['お子様向け', s.kids]];
+    rows.forEach(([k, val]) => { if (val) h += '<dt>' + k + '</dt><dd>' + (k === '電話' ? '<a href="tel:' + esc(val.replace(/[^\d+]/g, '')) + '">' + esc(val) + '</a>' : esc(val)) + '</dd>'; });
+    h += '</dl></div>';
+    h += '<div class="sec"><h2>リンク</h2><div class="links">';
+    h += (s.url ? '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">公式のスタンプラリーのページ</a>' : '');
+    h += '<a href="' + esc(gm) + '" target="_blank" rel="noopener">Googleマップで見る</a>';
+    if (s.web) h += '<a href="' + esc(s.web) + '" target="_blank" rel="noopener">お店のHP</a>';
+    Object.keys(s.sns || {}).forEach(k => { h += '<a href="' + esc(s.sns[k]) + '" target="_blank" rel="noopener">' + esc(k) + '</a>'; });
+    h += '</div></div>';
+    h += '<div class="foot">引用元：' + esc(DATA.site.source_name) + '（' + esc(jdate(DATA.updated)) + '現在）。営業状況・価格は変更される場合があります。</div>';
+    h += '</div>';
+    const d = $('#detail'); d.innerHTML = h; d.hidden = false; d.scrollTop = 0;
+    $('#list').hidden = true; $('#panelHead').hidden = true;
+    $('#back').onclick = closeDetail;
+    $('#share').onclick = () => share(s);
+    $('#visit').onclick = () => { toggleVisit(s.id); openDetail(s.id, true); };
+    try { history.replaceState(null, '', '#s=' + encodeURIComponent(s.id)); } catch (e) {}
+    if (isMobile()) setSheet('half');
+    focusOn(s, fromList);
+  }
+  function closeDetail() {
+    const prev = state.sel; state.sel = null;
+    if (prev && markers[prev]) markers[prev].setIcon(icon(STORES.find(x => x.id === prev)));
+    $('#detail').hidden = true; $('#list').hidden = false; $('#panelHead').hidden = false;
+    try { history.replaceState(null, '', location.pathname + location.search); } catch (e) {}
+    renderList();
+  }
+  function focusOn(s, animate) {
+    const z = Math.max(map.getZoom(), 17);
+    const target = L.latLng(s.lat, s.lng);
+    if (isMobile()) {
+      const mapH = map.getSize().y;
+      const p = map.project(target, z).add([0, mapH * 0.22]);
+      map.setView(map.unproject(p, z), z, { animate: !!animate });
+    } else {
+      map.setView(target, z, { animate: !!animate });
+    }
+  }
+  function toggleVisit(id) {
+    if (visited[id]) delete visited[id]; else visited[id] = new Date().toISOString().slice(0, 10);
+    saveVisited();
+    markers[id].setIcon(icon(STORES.find(x => x.id === id)));
+    renderStat(); renderList();
+  }
+  function share(s) {
+    const url = location.href.split('#')[0] + '#s=' + encodeURIComponent(s.id);
+    const text = s.name + '（' + catOf(s).name + '）' + (s.menu[0] ? ' ' + s.menu[0] : '');
+    if (navigator.share) navigator.share({ title: s.name, text, url }).catch(() => {});
+    else if (navigator.clipboard) navigator.clipboard.writeText(text + '\n' + url).then(() => toast('リンクをコピーしました'));
+  }
+  let toastT;
+  function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove('show'), 2200); }
+
+  // ---------- location
+  function locate() {
+    if (!navigator.geolocation) { toast('この端末では位置情報が使えません'); return; }
+    const btn = $('#locBtn'); btn.textContent = '⏳';
+    navigator.geolocation.getCurrentPosition(pos => {
+      const ll = [pos.coords.latitude, pos.coords.longitude];
+      state.pos = ll;
+      STORES.forEach(s => { s._dist = map.distance(ll, [s.lat, s.lng]); });
+      if (!meMarker) meMarker = L.marker(ll, { icon: L.divIcon({ className: '', html: '<div class="me"></div>', iconSize: [18, 18], iconAnchor: [9, 9] }), zIndexOffset: 2000 }).addTo(map);
+      else meMarker.setLatLng(ll);
+      state.sort = 'dist'; $('#sort').value = 'dist';
+      btn.textContent = '📍'; btn.classList.add('on');
+      map.setView(ll, Math.max(map.getZoom(), 16));
+      renderList();
+      const near = sorted(STORES.filter(s => passes(s, false)))[0];
+      if (near && near._dist > 3000) toast('エリアから離れています（最寄り ' + fmtDist(near._dist) + '）');
+    }, err => {
+      btn.textContent = '📍';
+      toast(err.code === 1 ? '位置情報の利用が許可されていません' : '現在地を取得できませんでした');
+    }, { enableHighAccuracy: true, timeout: 10000, maximumAge: 30000 });
+  }
+
+  // ---------- bottom sheet
+  const panel = $('#panel');
+  const isMobile = () => window.matchMedia('(max-width: 899px)').matches;
+  let sheet = 'half';
+  function setSheet(s) { sheet = s; panel.classList.remove('half', 'full', 'peek'); panel.classList.add(s); }
+  (function initDrag() {
+    const h = $('#handle'); let startY = 0, startT = 0, dragging = false;
+    const heightOf = () => panel.getBoundingClientRect().height;
+    const offsetFor = st => st === 'full' ? 0 : st === 'half' ? heightOf() * 0.5 : heightOf() - 112;
+    h.addEventListener('pointerdown', e => { dragging = true; startY = e.clientY; startT = offsetFor(sheet); panel.classList.add('drag'); h.setPointerCapture(e.pointerId); });
+    h.addEventListener('pointermove', e => { if (!dragging) return; const y = Math.max(0, Math.min(heightOf() - 60, startT + (e.clientY - startY))); panel.style.transform = 'translateY(' + y + 'px)'; });
+    const end = e => {
+      if (!dragging) return; dragging = false; panel.classList.remove('drag'); panel.style.transform = '';
+      const y = startT + (e.clientY - startY), H = heightOf();
+      const moved = Math.abs(e.clientY - startY) < 8;
+      if (moved) { setSheet(sheet === 'full' ? 'peek' : sheet === 'half' ? 'full' : 'half'); return; }
+      setSheet(y < H * 0.25 ? 'full' : y < H * 0.75 ? 'half' : 'peek');
+    };
+    h.addEventListener('pointerup', end); h.addEventListener('pointercancel', end);
+  })();
+
+  // ---------- events
+  $('#chips').addEventListener('click', e => {
+    const b = e.target.closest('.chip'); if (!b) return;
+    if (b.dataset.cat) {
+      const id = +b.dataset.cat;
+      const all = state.cats.size === Object.keys(CATS).length;
+      if (all) { state.cats = new Set([id]); }
+      else if (state.cats.has(id)) { state.cats.delete(id); if (!state.cats.size) state.cats = new Set(Object.keys(CATS).map(k => +k.slice(1))); }
+      else state.cats.add(id);
+    } else if (b.dataset.visit) { state.visit = state.visit === 'todo' ? 'all' : 'todo'; }
+    else if (b.dataset.inview) { state.inView = !state.inView; }
+    else if (b.dataset.open) { state.openOnly = !state.openOnly; }
+    renderChips(); refreshAll();
+  });
+  $('#visitedStat').addEventListener('click', () => { state.visit = state.visit === 'done' ? 'all' : 'done'; renderChips(); refreshAll(); toast(state.visit === 'done' ? '訪問済みの蔵だけ表示' : 'すべて表示'); });
+  let qT; $('#q').addEventListener('input', e => { clearTimeout(qT); qT = setTimeout(() => { state.q = nfkc(e.target.value.trim()); refreshAll(); if (isMobile() && state.q && sheet === 'peek') setSheet('half'); }, 120); });
+  $('#sort').addEventListener('change', e => { state.sort = e.target.value; if (state.sort === 'dist' && !state.pos) locate(); renderList(); });
+  $('#locBtn').addEventListener('click', locate);
+  $('#list').addEventListener('click', e => {
+    const v = e.target.closest('.vbtn'); if (v) { e.stopPropagation(); toggleVisit(v.dataset.v); return; }
+    const c = e.target.closest('.card'); if (c) openDetail(c.dataset.id, true);
+  });
+  let mvT; map.on('moveend', () => { if (state.inView) { clearTimeout(mvT); mvT = setTimeout(renderList, 150); } });
+  // showModal は最初のリンクにフォーカスを移してそこまでスクロールしてしまうので、開いたら先頭に戻す
+  const openAbout = () => { const d = $('#about'); d.showModal(); if (document.activeElement) document.activeElement.blur(); d.scrollTop = 0; d.querySelector('.about').scrollTop = 0; };
+  $('#aboutBtn').addEventListener('click', openAbout);
+  $('#aboutClose').addEventListener('click', () => $('#about').close());
+  if ($('#evbar')) $('#evbar').addEventListener('click', openAbout);  // イベント概要の帯（config の event_summary があるときだけ出る）
+  if (location.hash === '#about') openAbout();
+  $('#updated').textContent = DATA.updated; $('#updatedJ').textContent = jdate(DATA.updated);
+  if (!MEDIA) { $('#verBadge').textContent = '非公式・写真なし版'; }
+  window.addEventListener('hashchange', route);
+  window.addEventListener('resize', () => { if (!isMobile()) { panel.classList.remove('half', 'full', 'peek'); panel.style.transform = ''; } else setSheet(sheet); map.invalidateSize(); });
+  function route() {
+    const m = location.hash.match(/#s=([^&]+)/);
+    if (m) { const id = decodeURIComponent(m[1]); if (STORES.some(s => s.id === id)) openDetail(id, false); }
+  }
+
+  // ---------- init
+  $('#sort').value = state.sort;
+  renderChips(); refreshAll();
+  if (isMobile()) setSheet('half');
+  function initialView() {
+    map.invalidateSize();
+    const z = DATA.site.zoom || 15, c = L.latLng(DATA.site.center[0], DATA.site.center[1]);
+    if (isMobile()) { const p = map.project(c, z).add([0, map.getSize().y * 0.25]); map.setView(map.unproject(p, z), z, { animate: false }); }
+    else map.setView(c, z, { animate: false });
+  }
+  setTimeout(() => { initialView(); if (location.hash) route(); }, 60);
+  setInterval(() => { if (!$('#list').hidden) renderList(); }, 60000);
+})();
+</script>
+</body>
+</html>

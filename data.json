@@ -1,0 +1,4947 @@
+{
+ "updated": "2026-09-20",
+ "source": "https://www.nagano-sake.or.jp/tourism/stamp/",
+ "holidays": [
+  "2026-09-21",
+  "2026-09-22",
+  "2026-09-23",
+  "2026-10-12",
+  "2026-11-03",
+  "2026-11-23",
+  "2027-01-01",
+  "2027-01-11",
+  "2027-02-11",
+  "2027-02-23",
+  "2027-03-21",
+  "2027-03-22"
+ ],
+ "cats": {
+  "c1": {
+   "name": "中野エリア",
+   "color": "#B5452F",
+   "icon": "🍶"
+  },
+  "c2": {
+   "name": "長野エリア",
+   "color": "#1F4E8C",
+   "icon": "🍶"
+  },
+  "c3": {
+   "name": "佐久エリア",
+   "color": "#2E7D4F",
+   "icon": "🍶"
+  },
+  "c4": {
+   "name": "上田エリア",
+   "color": "#C8891A",
+   "icon": "🍶"
+  },
+  "c5": {
+   "name": "諏訪エリア",
+   "color": "#6A4C93",
+   "icon": "🍶"
+  },
+  "c6": {
+   "name": "伊那エリア",
+   "color": "#0F8B8D",
+   "icon": "🍶"
+  },
+  "c7": {
+   "name": "飯田エリア",
+   "color": "#A23B72",
+   "icon": "🍶"
+  },
+  "c8": {
+   "name": "木曽エリア",
+   "color": "#5B6B2F",
+   "icon": "🍶"
+  },
+  "c9": {
+   "name": "松本エリア",
+   "color": "#33312E",
+   "icon": "🍶"
+  },
+  "c10": {
+   "name": "北安曇エリア",
+   "color": "#4FA3D1",
+   "icon": "🍶"
+  }
+ },
+ "site": {
+  "title": "NAGANO SAKE 酒蔵スタンプラリーマップ（非公式・見本）",
+  "source_name": "長野県酒造組合「蔵元情報」（令和7年4月現在）・スタンプシート第15版（PDF）",
+  "center": [
+   36.31,
+   138.09
+  ],
+  "zoom": 8,
+  "dates_month": null,
+  "icon": "🍶"
+ },
+ "stores": [
+  {
+   "id": "k01",
+   "name": "㈱角口酒造店",
+   "kana": "",
+   "cat": 1,
+   "type": "飯山市",
+   "addr": "飯山市大字常郷1147番地",
+   "tel": "",
+   "hours": "9:00～18:00",
+   "closed": "不定休（ホームページで営業日をご確認ください）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.946625,
+   "lng": 138.401917,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "1"
+  },
+  {
+   "id": "k02",
+   "name": "㈱田中屋酒造店",
+   "kana": "",
+   "cat": 1,
+   "type": "飯山市",
+   "addr": "飯山市大字飯山2227番地",
+   "tel": "",
+   "hours": "9:00～17:30",
+   "closed": "日・祝日",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.8537655,
+   "lng": 138.3638236,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "2"
+  },
+  {
+   "id": "k03",
+   "name": "㈱井賀屋酒造場",
+   "kana": "",
+   "cat": 1,
+   "type": "中野市",
+   "addr": "中野市大字中野1597",
+   "tel": "",
+   "hours": "9:00～19:00",
+   "closed": "日曜（予約がある場合のみ日曜も営業）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.74752,
+   "lng": 138.373581,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1140
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "3"
+  },
+  {
+   "id": "k04",
+   "name": "志賀泉酒造㈱",
+   "kana": "",
+   "cat": 1,
+   "type": "中野市",
+   "addr": "中野市東山3-1",
+   "tel": "",
+   "hours": "8:30～17:00",
+   "closed": "土・日（3月より11月迄）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.745098,
+   "lng": 138.378311,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "4"
+  },
+  {
+   "id": "k05",
+   "name": "㈱丸世酒造店",
+   "kana": "",
+   "cat": 1,
+   "type": "中野市",
+   "addr": "中野市中央二丁目5番12号",
+   "tel": "",
+   "hours": "9:00～18:00",
+   "closed": "日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.745129,
+   "lng": 138.373627,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "5"
+  },
+  {
+   "id": "k06",
+   "name": "㈱玉村本店",
+   "kana": "",
+   "cat": 1,
+   "type": "山ノ内町",
+   "addr": "下高井郡山ノ内町大字平穏1163",
+   "tel": "",
+   "hours": "8:30～17:30",
+   "closed": "日曜・元旦",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.732513,
+   "lng": 138.432114,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "6"
+  },
+  {
+   "id": "k12",
+   "name": "㈱高橋助作酒造店",
+   "kana": "",
+   "cat": 2,
+   "type": "信濃町",
+   "addr": "上水内郡信濃町大字古間856番地1",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "元旦",
+   "menu": [
+    "試飲：可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.797428,
+   "lng": 138.214539,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "12"
+  },
+  {
+   "id": "k13",
+   "name": "高沢酒造㈱",
+   "kana": "",
+   "cat": 2,
+   "type": "小布施町",
+   "addr": "上高井郡小布施町大字飯田776",
+   "tel": "",
+   "hours": "8:30～18:30",
+   "closed": "元旦",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.691975,
+   "lng": 138.303558,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1110
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "13"
+  },
+  {
+   "id": "k14",
+   "name": "㈱松葉屋本店",
+   "kana": "",
+   "cat": 2,
+   "type": "小布施町",
+   "addr": "上高井郡小布施町大字小布施778",
+   "tel": "",
+   "hours": "9:00～18:00",
+   "closed": "元旦のみ",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.696335,
+   "lng": 138.31691,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "14"
+  },
+  {
+   "id": "k15",
+   "name": "㈱桝一市村酒造場",
+   "kana": "",
+   "cat": 2,
+   "type": "小布施町",
+   "addr": "上高井郡小布施町小布施807",
+   "tel": "",
+   "hours": "9:00～19:00",
+   "closed": "年中無休",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.69521,
+   "lng": 138.317017,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1140
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "15"
+  },
+  {
+   "id": "k16",
+   "name": "㈱遠藤酒造場",
+   "kana": "",
+   "cat": 2,
+   "type": "須坂市",
+   "addr": "須坂市大字須坂29番地",
+   "tel": "",
+   "hours": "8:30～17:30",
+   "closed": "元旦",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.653618,
+   "lng": 138.314804,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "16"
+  },
+  {
+   "id": "k17",
+   "name": "㈱今井酒造店",
+   "kana": "",
+   "cat": 2,
+   "type": "長野市",
+   "addr": "長野市大字小島62",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.658699,
+   "lng": 138.250122,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "17"
+  },
+  {
+   "id": "k18",
+   "name": "㈱よしのや",
+   "kana": "",
+   "cat": 2,
+   "type": "長野市",
+   "addr": "長野市西之門町941",
+   "tel": "",
+   "hours": "8:30～17:30",
+   "closed": "年中無休",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.657784,
+   "lng": 138.186111,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "18"
+  },
+  {
+   "id": "k19",
+   "name": "㈱西飯田酒造店",
+   "kana": "",
+   "cat": 2,
+   "type": "長野市",
+   "addr": "長野市篠ノ井小松原1726番地",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.6202208,
+   "lng": 138.1323132,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "19"
+  },
+  {
+   "id": "k20",
+   "name": "㈱東飯田酒造店",
+   "kana": "",
+   "cat": 2,
+   "type": "長野市",
+   "addr": "長野市篠ノ井小松原1724番地",
+   "tel": "",
+   "hours": "9:00～16:00",
+   "closed": "第2日曜・第4日曜（予約の場合は対応）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.6201164,
+   "lng": 138.1330441,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        960
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [
+     [
+      2,
+      0
+     ],
+     [
+      4,
+      0
+     ]
+    ],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "20"
+  },
+  {
+   "id": "k21",
+   "name": "㈱酒千蔵野",
+   "kana": "",
+   "cat": 2,
+   "type": "長野市",
+   "addr": "長野市川中島町今井368-1",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "日・祝日・第2土曜（予約の場合対応）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.597103,
+   "lng": 138.147552,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [
+     [
+      2,
+      6
+     ]
+    ],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "21"
+  },
+  {
+   "id": "k22",
+   "name": "㈱尾澤酒造場",
+   "kana": "",
+   "cat": 2,
+   "type": "長野市",
+   "addr": "長野市信州新町新町168-1",
+   "tel": "",
+   "hours": "9:00～17:00（5月～9月）",
+   "closed": "土・日・祝日（基本。事前にお問合わせ下さい）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.569641,
+   "lng": 138.008408,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "22"
+  },
+  {
+   "id": "k23",
+   "name": "長野銘醸㈱",
+   "kana": "",
+   "cat": 2,
+   "type": "千曲市",
+   "addr": "千曲市大字八幡275",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.516453,
+   "lng": 138.075439,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "23"
+  },
+  {
+   "id": "k24",
+   "name": "天法酒造㈱",
+   "kana": "",
+   "cat": 2,
+   "type": "千曲市",
+   "addr": "千曲市大字千本柳659",
+   "tel": "",
+   "hours": "8:00～17:00（土曜日は直売のみ9:00～16:00）",
+   "closed": "土・日・祝日、年末年始・盆休み有り",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.506058,
+   "lng": 138.128784,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "24"
+  },
+  {
+   "id": "k44",
+   "name": "大塚酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "小諸市",
+   "addr": "小諸市大手2-1-24",
+   "tel": "",
+   "hours": "8:30～17:00",
+   "closed": "日・祝日",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.327858,
+   "lng": 138.423203,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "44"
+  },
+  {
+   "id": "k45",
+   "name": "千曲錦酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市長土呂1110",
+   "tel": "",
+   "hours": "平日 9:00～16:00／土日祝 10:00～16:00",
+   "closed": "基本：年末年始",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.286736,
+   "lng": 138.464096,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "r": [
+       [
+        540,
+        960
+       ]
+      ]
+     },
+     {
+      "d": [
+       0,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        600,
+        960
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "45"
+  },
+  {
+   "id": "k46",
+   "name": "大澤酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市茂田井2206",
+   "tel": "",
+   "hours": "9:00～16:00",
+   "closed": "年中無休",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.273567,
+   "lng": 138.337616,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        960
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "46"
+  },
+  {
+   "id": "k47",
+   "name": "武重本家酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市茂田井2179",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "土・日・祝日、年末年始・8/14～8/17",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.274345,
+   "lng": 138.339325,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "47"
+  },
+  {
+   "id": "k48",
+   "name": "戸塚酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市岩村田752番地",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.272575,
+   "lng": 138.478928,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "48"
+  },
+  {
+   "id": "k49",
+   "name": "㈱土屋酒造店",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市中込1914-2",
+   "tel": "",
+   "hours": "9:00～17:30",
+   "closed": "日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.236301,
+   "lng": 138.474594,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "49"
+  },
+  {
+   "id": "k50",
+   "name": "芙蓉酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市平賀5372-イ",
+   "tel": "",
+   "hours": "8:30～17:30",
+   "closed": "日・祝日（土曜：4月～10月）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.228195,
+   "lng": 138.491516,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "50"
+  },
+  {
+   "id": "k51",
+   "name": "伴野酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市大字野沢123番地",
+   "tel": "",
+   "hours": "8:20～17:00",
+   "closed": "日・祝日（土曜：4月～10月）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.223293,
+   "lng": 138.470215,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        500,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "51"
+  },
+  {
+   "id": "k52",
+   "name": "木内醸造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市大沢985",
+   "tel": "",
+   "hours": "9:00～18:00",
+   "closed": "年中無休",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.20853,
+   "lng": 138.456726,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "52"
+  },
+  {
+   "id": "k53",
+   "name": "橘倉酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市臼田653番地2",
+   "tel": "",
+   "hours": "平日 9:00～18:00／土日祝 9:00～17:00",
+   "closed": "ショップは12/31～1/3（会社は土・日・祝日休み）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.20219,
+   "lng": 138.471863,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "r": [
+       [
+        540,
+        1080
+       ]
+      ]
+     },
+     {
+      "d": [
+       0,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "53"
+  },
+  {
+   "id": "k54",
+   "name": "佐久の花酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久市",
+   "addr": "佐久市下越620",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "不定休",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.191738,
+   "lng": 138.48761,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "54"
+  },
+  {
+   "id": "k55",
+   "name": "黒澤酒造㈱",
+   "kana": "",
+   "cat": 3,
+   "type": "佐久穂町",
+   "addr": "南佐久郡佐久穂町大字穂積1400番地",
+   "tel": "",
+   "hours": "10:00～17:00",
+   "closed": "年中無休",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.135975,
+   "lng": 138.478363,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        600,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "55"
+  },
+  {
+   "id": "k25",
+   "name": "沓掛酒造㈱",
+   "kana": "",
+   "cat": 4,
+   "type": "上田市",
+   "addr": "上田市塩尻35",
+   "tel": "",
+   "hours": "9:00～16:00",
+   "closed": "土・日・祝日 直売店：月曜（予約の場合は対応）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.419201,
+   "lng": 138.206299,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        960
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "25"
+  },
+  {
+   "id": "k26",
+   "name": "和田龍酒造㈱",
+   "kana": "",
+   "cat": 4,
+   "type": "上田市",
+   "addr": "上田市中央西1-14-14",
+   "tel": "",
+   "hours": "9:00～18:00",
+   "closed": "日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.407486,
+   "lng": 138.245468,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "26"
+  },
+  {
+   "id": "k27",
+   "name": "岡崎酒造㈱",
+   "kana": "",
+   "cat": 4,
+   "type": "上田市",
+   "addr": "上田市中央4丁目7番33号",
+   "tel": "",
+   "hours": "9:00～16:00",
+   "closed": "年中無休",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.405472,
+   "lng": 138.253082,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        960
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "27"
+  },
+  {
+   "id": "k28",
+   "name": "若林醸造㈱",
+   "kana": "",
+   "cat": 4,
+   "type": "上田市",
+   "addr": "上田市大字中野466",
+   "tel": "",
+   "hours": "9:00～16:00",
+   "closed": "土（第三除く）・日・祝日、年末年始・盆休み有り",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.359791,
+   "lng": 138.194366,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        960
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "28"
+  },
+  {
+   "id": "k29",
+   "name": "信州銘醸㈱",
+   "kana": "",
+   "cat": 4,
+   "type": "上田市",
+   "addr": "上田市長瀬2999-1",
+   "tel": "",
+   "hours": "事前にお問い合わせ下さい",
+   "closed": "（記載なし）",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.359341,
+   "lng": 138.289505,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": false,
+    "rules": [],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "29"
+  },
+  {
+   "id": "k30",
+   "name": "山三酒造㈱",
+   "kana": "",
+   "cat": 4,
+   "type": "上田市",
+   "addr": "上田市御嶽堂687の1",
+   "tel": "",
+   "hours": "事前にお問い合わせ下さい",
+   "closed": "（記載なし）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.340221,
+   "lng": 138.266891,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": false,
+    "rules": [],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "30"
+  },
+  {
+   "id": "k56",
+   "name": "㈱豊島屋",
+   "kana": "",
+   "cat": 5,
+   "type": "岡谷市",
+   "addr": "岡谷市本町3-9-1",
+   "tel": "",
+   "hours": "8:30～17:30",
+   "closed": "日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.062256,
+   "lng": 138.045013,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "56"
+  },
+  {
+   "id": "k57",
+   "name": "高天酒造㈱",
+   "kana": "",
+   "cat": 5,
+   "type": "岡谷市",
+   "addr": "岡谷市銀座2丁目2-17",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.068092,
+   "lng": 138.054199,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "57"
+  },
+  {
+   "id": "k58",
+   "name": "磐栄運送㈱ 諏訪御湖鶴酒造場",
+   "kana": "",
+   "cat": 5,
+   "type": "下諏訪町",
+   "addr": "諏訪郡下諏訪町3205-17",
+   "tel": "",
+   "hours": "事前にお問い合わせ下さい",
+   "closed": "（記載なし）",
+   "menu": [
+    "試飲：記載なし（事前にお問い合わせください）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.0755976,
+   "lng": 138.0865362,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": false,
+    "rules": [],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "58"
+  },
+  {
+   "id": "k59",
+   "name": "㈱舞姫",
+   "kana": "",
+   "cat": 5,
+   "type": "諏訪市",
+   "addr": "諏訪市諏訪2丁目9-25",
+   "tel": "",
+   "hours": "9:00～18:00",
+   "closed": "無休",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.042549,
+   "lng": 138.120224,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "59"
+  },
+  {
+   "id": "k60",
+   "name": "麗人酒造㈱",
+   "kana": "",
+   "cat": 5,
+   "type": "諏訪市",
+   "addr": "諏訪市諏訪2丁目9-21",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "年中無休（年末年始・お盆は除く）",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.042118,
+   "lng": 138.120636,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "60"
+  },
+  {
+   "id": "k61",
+   "name": "伊東酒造㈱",
+   "kana": "",
+   "cat": 5,
+   "type": "諏訪市",
+   "addr": "諏訪市諏訪2丁目3番6号",
+   "tel": "",
+   "hours": "10:00～17:30",
+   "closed": "年末年始（12/31～1/3）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.041672,
+   "lng": 138.121048,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        600,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "61"
+  },
+  {
+   "id": "k62",
+   "name": "酒ぬのや本金酒造㈱",
+   "kana": "",
+   "cat": 5,
+   "type": "諏訪市",
+   "addr": "諏訪市諏訪2丁目8-21",
+   "tel": "",
+   "hours": "8:30～17:30",
+   "closed": "不定休（日・祝日はご連絡下さい）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.041759,
+   "lng": 138.121109,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1050
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "62"
+  },
+  {
+   "id": "k63",
+   "name": "宮坂醸造㈱",
+   "kana": "",
+   "cat": 5,
+   "type": "諏訪市",
+   "addr": "諏訪市元町1-16",
+   "tel": "",
+   "hours": "10:00～17:00",
+   "closed": "水曜",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.039528,
+   "lng": 138.12291,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        600,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     3
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "63"
+  },
+  {
+   "id": "k64",
+   "name": "戸田酒造㈱",
+   "kana": "",
+   "cat": 5,
+   "type": "茅野市",
+   "addr": "茅野市ちの2998",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.992577,
+   "lng": 138.150757,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "64"
+  },
+  {
+   "id": "k65",
+   "name": "㈱小野酒造店",
+   "kana": "",
+   "cat": 6,
+   "type": "辰野町",
+   "addr": "上伊那郡辰野町大字小野992-1",
+   "tel": "",
+   "hours": "8:00～17:00（時間外はお問合せ下さい）",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.040279,
+   "lng": 137.961594,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "65"
+  },
+  {
+   "id": "k66",
+   "name": "春日酒造㈱",
+   "kana": "",
+   "cat": 6,
+   "type": "伊那市",
+   "addr": "伊那市西町4875-1（ＪＲ伊那市駅となり）",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.83744,
+   "lng": 137.958054,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "66"
+  },
+  {
+   "id": "k67",
+   "name": "(資)宮島酒店",
+   "kana": "",
+   "cat": 6,
+   "type": "伊那市",
+   "addr": "伊那市荒井3629番地1",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "土・日・祝日（但し冬期は営業する場合あり）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.841232,
+   "lng": 137.957809,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "67"
+  },
+  {
+   "id": "k68",
+   "name": "㈱仙醸",
+   "kana": "",
+   "cat": 6,
+   "type": "伊那市",
+   "addr": "伊那市高遠町上山田2432",
+   "tel": "",
+   "hours": "8:30～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.822746,
+   "lng": 138.032089,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "68"
+  },
+  {
+   "id": "k69",
+   "name": "酒造㈱長生社",
+   "kana": "",
+   "cat": 6,
+   "type": "駒ヶ根市",
+   "addr": "駒ヶ根市赤須東10番31号",
+   "tel": "",
+   "hours": "事前にお問い合わせ下さい",
+   "closed": "（記載なし）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.732506,
+   "lng": 137.936096,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": false,
+    "rules": [],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "69"
+  },
+  {
+   "id": "k70",
+   "name": "米澤酒造㈱",
+   "kana": "",
+   "cat": 6,
+   "type": "中川村",
+   "addr": "上伊那郡中川村大草4182-1",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.637611,
+   "lng": 137.947098,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "70"
+  },
+  {
+   "id": "k71",
+   "name": "喜久水酒造㈱",
+   "kana": "",
+   "cat": 7,
+   "type": "飯田市",
+   "addr": "飯田市鼎切石4293番地",
+   "tel": "",
+   "hours": "10:00～16:00",
+   "closed": "無休（10月～4月）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.513046,
+   "lng": 137.807083,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        600,
+        960
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "71"
+  },
+  {
+   "id": "k31",
+   "name": "㈱湯川酒造店",
+   "kana": "",
+   "cat": 8,
+   "type": "木祖村",
+   "addr": "木曽郡木祖村大字藪原1003番地の1",
+   "tel": "",
+   "hours": "10:00～16:30（冬季）",
+   "closed": "月・日（祝日は不定休）",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.968666,
+   "lng": 137.791153,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        600,
+        990
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     1
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "31"
+  },
+  {
+   "id": "k32",
+   "name": "七笑酒造㈱",
+   "kana": "",
+   "cat": 8,
+   "type": "木曽町",
+   "addr": "木曽郡木曽町福島5135",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "年中無休",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.849911,
+   "lng": 137.697495,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "32"
+  },
+  {
+   "id": "k33",
+   "name": "㈱中善酒造店",
+   "kana": "",
+   "cat": 8,
+   "type": "木曽町",
+   "addr": "木曽郡木曽町福島5990",
+   "tel": "",
+   "hours": "7:00～19:00",
+   "closed": "不定休",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.824894,
+   "lng": 137.716949,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        420,
+        1140
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "33"
+  },
+  {
+   "id": "k34",
+   "name": "西尾酒造㈱",
+   "kana": "",
+   "cat": 8,
+   "type": "大桑村",
+   "addr": "木曽郡大桑村須原893",
+   "tel": "",
+   "hours": "10:00～12:00、13:00～16:00",
+   "closed": "不定休（12/31・1/1は休日）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 35.6955894,
+   "lng": 137.6917398,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        600,
+        720
+       ],
+       [
+        780,
+        960
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "34"
+  },
+  {
+   "id": "k35",
+   "name": "ＥＨ酒造㈱",
+   "kana": "",
+   "cat": 9,
+   "type": "安曇野市",
+   "addr": "安曇野市豊科高家1090-1",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "日・祝日、年末年始・盆休み有り",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.255348,
+   "lng": 137.923416,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "35"
+  },
+  {
+   "id": "k36",
+   "name": "笹井酒造㈱",
+   "kana": "",
+   "cat": 9,
+   "type": "松本市",
+   "addr": "松本市大字島内3682番地",
+   "tel": "",
+   "hours": "8:30～18:00",
+   "closed": "日曜",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.248535,
+   "lng": 137.949051,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "36"
+  },
+  {
+   "id": "k37",
+   "name": "善哉酒造㈱",
+   "kana": "",
+   "cat": 9,
+   "type": "松本市",
+   "addr": "松本市大手5-4-24",
+   "tel": "",
+   "hours": "9:00～17:00",
+   "closed": "不定休",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.235615,
+   "lng": 137.97641,
+   "approx": false,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "37"
+  },
+  {
+   "id": "k38",
+   "name": "大信州酒造㈱",
+   "kana": "",
+   "cat": 9,
+   "type": "松本市",
+   "addr": "松本市大字島立2380",
+   "tel": "",
+   "hours": "平日 10:00～18:00／土日祝 10:00～17:00",
+   "closed": "年末年始・盆休み有り",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.227772,
+   "lng": 137.928101,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       1,
+       2,
+       3,
+       4,
+       5
+      ],
+      "r": [
+       [
+        600,
+        1080
+       ]
+      ]
+     },
+     {
+      "d": [
+       0,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        600,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "38"
+  },
+  {
+   "id": "k39",
+   "name": "㈱亀田屋酒造店",
+   "kana": "",
+   "cat": 9,
+   "type": "松本市",
+   "addr": "松本市島立2748",
+   "tel": "",
+   "hours": "9:30～17:00",
+   "closed": "年末年始（12/31～1/3）、お盆（3日間）",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.224415,
+   "lng": 137.92514,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        570,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "39"
+  },
+  {
+   "id": "k40",
+   "name": "岩波酒造(資)",
+   "kana": "",
+   "cat": 9,
+   "type": "松本市",
+   "addr": "松本市里山辺5159",
+   "tel": "",
+   "hours": "8:30～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.224476,
+   "lng": 137.996262,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "40"
+  },
+  {
+   "id": "k41",
+   "name": "(資)丸永酒造場",
+   "kana": "",
+   "cat": 9,
+   "type": "塩尻市",
+   "addr": "塩尻市大字広丘高出840",
+   "tel": "",
+   "hours": "8:30～17:00",
+   "closed": "土・日・祝日",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.121281,
+   "lng": 137.965164,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "41"
+  },
+  {
+   "id": "k42",
+   "name": "和饗酒造㈱",
+   "kana": "",
+   "cat": 9,
+   "type": "塩尻市",
+   "addr": "塩尻市塩尻町140",
+   "tel": "",
+   "hours": "8:30～17:00",
+   "closed": "日・祝日（夏期：土・日・祝日）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.103573,
+   "lng": 137.974182,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        510,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "42"
+  },
+  {
+   "id": "k43",
+   "name": "美寿々酒造㈱",
+   "kana": "",
+   "cat": 9,
+   "type": "塩尻市",
+   "addr": "塩尻市大字洗馬2402番地",
+   "tel": "",
+   "hours": "8:00～18:00",
+   "closed": "不定休（日・祝日も営業することがあるのでお問合わせください）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.102024,
+   "lng": 137.899521,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "43"
+  },
+  {
+   "id": "k07",
+   "name": "北安醸造㈱",
+   "kana": "",
+   "cat": 10,
+   "type": "大町市",
+   "addr": "大町市大町2340番地1",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "土・日・祝日（基本。事前にお問合わせ下さい）",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.511349,
+   "lng": 137.85788,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "7"
+  },
+  {
+   "id": "k08",
+   "name": "白馬錦酒造㈱",
+   "kana": "",
+   "cat": 10,
+   "type": "大町市",
+   "addr": "大町市大町2512-1",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "土・日・祝日（基本。事前にお問合わせ下さい）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.507137,
+   "lng": 137.859268,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "8"
+  },
+  {
+   "id": "k09",
+   "name": "㈱市野屋",
+   "kana": "",
+   "cat": 10,
+   "type": "大町市",
+   "addr": "大町市大町2527番地イ号",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "土・日・祝日（基本。事前にお問合わせ下さい）",
+   "menu": [
+    "試飲：不可"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.506317,
+   "lng": 137.859741,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "9"
+  },
+  {
+   "id": "k10",
+   "name": "福源酒造㈱",
+   "kana": "",
+   "cat": 10,
+   "type": "池田町",
+   "addr": "北安曇郡池田町池田2100",
+   "tel": "",
+   "hours": "8:00～17:00",
+   "closed": "土・日・祝日（基本。事前にお問合わせ下さい）",
+   "menu": [
+    "試飲：可（有料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.420792,
+   "lng": 137.880447,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        480,
+        1020
+       ]
+      ]
+     }
+    ],
+    "closed": [
+     0,
+     6,
+     "h"
+    ],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "10"
+  },
+  {
+   "id": "k11",
+   "name": "大雪渓酒造㈱",
+   "kana": "",
+   "cat": 10,
+   "type": "池田町",
+   "addr": "北安曇郡池田町会染9642-2",
+   "tel": "",
+   "hours": "9:00～18:00（年末年始は短縮営業）",
+   "closed": "年中無休",
+   "menu": [
+    "試飲：可（無料）"
+   ],
+   "takeout": "",
+   "seats": "",
+   "station": "",
+   "web": "",
+   "sns": {},
+   "spice": "",
+   "price": "",
+   "halal": "",
+   "kids": "",
+   "allergy": "",
+   "lat": 36.390614,
+   "lng": 137.888229,
+   "approx": true,
+   "thumb": null,
+   "img": null,
+   "face": null,
+   "owner": "",
+   "desc": [],
+   "notice": "",
+   "url": "https://www.nagano-sake.or.jp/tourism/stamp/",
+   "gmap": null,
+   "page": null,
+   "sched": {
+    "ok": true,
+    "rules": [
+     {
+      "d": [
+       0,
+       1,
+       2,
+       3,
+       4,
+       5,
+       6,
+       "h"
+      ],
+      "r": [
+       [
+        540,
+        1080
+       ]
+      ]
+     }
+    ],
+    "closed": [],
+    "nth": [],
+    "dates": []
+   },
+   "pay": "",
+   "paySrc": "",
+   "reserve": "",
+   "quiet": "",
+   "num": "11"
+  }
+ ]
+}
